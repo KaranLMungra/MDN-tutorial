@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+:root {
+    --mg-quo-card: 2rem;
+    --pd-quo-card: 2rem;
+    --gap-quo-card: 1.2rem;
+    --wd-quo-card: 500px;
+    --clr-primary-quo-card: black;
+    --fs-quo-card-title: 2rem;
+    --fs-quo-card-subtitle: 1.2rem;
+    --fs-quo-card-body: 0.8rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    display: flex;
+    padding: 2rem;
+    flex-direction: row;
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+.quo-card {
+    position: relative;
+    margin: var(--mg-quo-card);
+    display: flex;
+    gap: var(--gap-quo-card);
+    flex-direction: row;
+    padding: var(--pd-quo-card);
+    width: var(--wd-quo-card);
+    height: max-content;
+    border: 5px solid var(--clr-primary-quo-card);
+    border-radius: 30px;
+    color:  var(--clr-primary-quo-card);
+}
+
+.quo-card-child {
+    position: relative;
+    border: none;
+}
+
+.quo-card-header {
+    width: 40%;
+    line-height: 1.9em;
+    text-transform: uppercase;
+}
+
+.quo-card-heading-title {
+    text-align: center;
+    font-size: var(--fs-quo-card-title);
+}
+
+.quo-card-heading-subtitle {
+    font-size: var(--fs-quo-card-subtitle);
+    text-align: right;
+}
+
+.quo-card-body {
+    font-size: var(--fs-quo-card-body);
+    width: 60%;
+}
+
+
+
+.quo-card::before,
+.quo-card::after {
+    font-family: 'Oswald', sans-serif;
+    position: absolute;
+    content: '\201C';
+    color: var(--clr-primary-quo-card);
+    font-size: 8rem;
+    font-weight: 700;
+    height: 6rem;
+    background-color: white;
+    z-index: 1;
+
+}
+
+.quo-card::before {
+    left: -30px;
+    top: -72px;
+}
+
+.quo-card::after {
+    right: -30px;
+    bottom: -72px;
+    transform: rotate(180deg);
+}
+
+
+.quo-card:hover {
+    background: var(--clr-primary-quo-card);
+    color:  white;
+}
+
+@media (max-width: 482px) {
+    .quo-card {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .quo-card-body {
+        width: 100%;
+        text-align: center;
+    }
+
+    .quo-card-header {
+        align-items: center;
+    }
+
+    .quo-card-heading-title {
+        width: 100%;
+        text-align: left;
+    }
+
+    .quo-card-heading-subtitle {
+        width: 100%;
+        text-align: right;
+    }
+
+
+    .quo-card::before,
+    .quo-card::after {
+        left: 45%;
+        right: unset;
+    }
+}
+
+.skyblue {
+	--clr-primary-quo-card: skyblue;
+}
+
+.grey {
+	--clr-primary-quo-card: grey;
+}
